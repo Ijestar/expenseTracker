@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+body{
+    display: grid;
+    position: relative;
+    width: 100%;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "aside header"
+    "aside main"    
+    ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fb;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    background-color: #0f2f69;
+    padding: 2rem 1rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.logo{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f5f7fb;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+li{
+    list-style: none;
+    width: 100%;
+    padding: 0.2rem 0.4rem;
+}
+
+li:hover{
+    background-color: #1f5ccc;
+}
+
+a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f5f7fb;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+header{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 1px rgba(144, 159, 187, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #f5f7fb;
+}
+
+.greeting{
+    font-size: 2rem;
+    color: #0f2f69;
+}
+
+.headerBtn{
+    display: flex;
+    gap: 0.8rem;
+}
+
+button{
+    padding: 0.4rem 1.2rem;
+    color: #f5f7fb;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.expense{
+    background-color: #da4d2a;
+}
+
+.expense:hover{
+    background-color: #fa6f4d;
+}
+
+.income{
+    background-color: #207756;
+}
+
+.income:hover{
+    background-color: #2d946c;
+}
+
+main{
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.cardContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card{
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 7px rgba(144, 159, 187, 0.2);
+}
+
+.title{
+    font-size: 0.8rem;
+    margin-bottom: auto;
+    color: #0f2f69;
+    font-weight: 600;
+}
+
+.amount{
+    font-size: 2rem;
+    margin-bottom: 0.1rem;
+    margin-top: 0.6rem;
+}
+
+.balanceCard .amount{
+    color: #0f2f69;
+}
+
+.incomeCard .amount{
+    color: #207756;
+}
+
+.expenseCard .amount{
+    color: #da4d2a;
+}
+
+.stats, .stats span, .stats i{
+    font-size: 0.7rem;
+}
+
+.recent{
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    box-shadow: 1px 1px 7px rgba(144, 159, 187, 0.2);
+}
+
+.tableTitle{
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+tr{
+    background-color: #f5f7fb;
+    font-size: 0.5rem;
+}
+
+td{
+    padding: 0.3rem .5rem; 
+}
+
+.alt{
+    background-color: #fff;
+}
+
+th{
+    text-align: left;
+    padding: 0.3rem 0.5rem;
+}
+
+.expenseForm, .incomeForm{
+    display: none;
+    height: 89.5vh;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: #55555566;
+}
+
+.formContainer{
+    background-color: #fff;
+    border-radius: 10px;
+    height: fit-content;
+    width: 300px;
+    padding: 1rem 2rem;
+}
+
+.formHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.7rem;
+}
+
+.formHeader p, .formHeader i{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0f2f69;
+}
+
+.formHeader i{
+    cursor: pointer;
+}
+
+.formHeader i:hover{
+    background-color: #cfcff5;
+}
+.inputGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.3rem;
+}
+
+label{
+    font-size: 0.6rem;
+    color: #0f2f69;
+}
+
+input, select{
+    border: 1px solid #cfcff5;
+    border-radius: 5px;
+    background-color: #f4f4fd;
+    height: 30px;
+    padding: 0.1rem 0.5rem;
+    color: #0f2f69;
+}
+
+.formBtn{
+    width: 100%;
+    background-color: #0f2f69;
+    color: #f5f7fb;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}

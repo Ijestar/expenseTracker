@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <header style="grid-area: header;">
+        <h1 class="greeting">Welcome User</h1>
+        <div class="headerBtn">
+            <button class="expense" onclick="openExpenseForm()">Add Expense</button>
+            <button class="income" onclick="openIncomeForm()">Add Income</button>
+        </div>
+    </header>
+    <aside style="grid-area: aside;">
+        <div class="logo">Expense Tracker</div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-file-invoice"></i>Expenses</a></li>
+                <li><a href="#"><i class="fa-solid fa-layer-group"></i>Categories</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-line"></i>Report</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i>Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main style="grid-area: main;">
+        <div class="cardContainer">
+            <div class="card balanceCard">
+                <p class="title">Monthly Balance</p>
+                <p class="amount" id="monthlyBalance">$7000</p>
+                <div class="stats"><span id="incomeStats">Monthly Income: $8050</span> <span id="expenseStats">Monthly Expenses: $1050</span></div>
+            </div>
+            <div class="card expenseCard">
+                <p class="title">Monthly Expense</p>
+                <p class="amount" id="monthlyExpense">$1050</p>
+                <div class="stats"><i class="fas fa-arrow-up"></i>12% increase this month</div>
+            </div>
+            <div class="card incomeCard">
+                <p class="title">Monthly Income</p>
+                <p class="amount" id="monthlyIncome">$8050</p>
+                <div class="stats"><i class="fas fa-arrow-up"></i>30% increase this month</div>
+            </div>
+        </div>
+
+        <div class="recent">
+            <p class="tableTitle">Recent transactions</p>
+            <table>
+                <thead>
+                    <tr class="tableHead">
+                        <th>Date</td>
+                        <th>Category</td>
+                        <th>Description</td>
+                        <th>Amount</td>
+                        <th></td>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                    <tr class="tableBody alt">
+                        <td>2026-03-04</td>
+                        <td>Food</td>
+                        <td>Dinner with friends</td>
+                        <td>$300</td>
+                        <td>...</td>
+                    </tr>
+
+                    <tr class="tableBody">
+                        <td>2026-03-03</td>
+                        <td>Transportation</td>
+                        <td>Transport</td>
+                        <td>$150</td>
+                        <td>...</td>
+                    </tr>
+
+                    <tr class="tableBody alt">
+                        <td>2026-03-02</td>
+                        <td>Entertainment</td>
+                        <td>Movie ticket</td>
+                        <td>$200</td>
+                        <td>...</td>
+                    </tr>
+
+                    <tr class="tableBody">
+                        <td>2026-03-01</td>
+                        <td>Housing</td>
+                        <td>Rent</td>
+                        <td>$400</td>
+                        <td>...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <section class="expenseForm" id="expenseForm">
+
+            <div class="formContainer">
+                <div class="formHeader">
+                    <p>Add Expense</p>
+                    <i class="fas fa-x" id="addExpenseBtn" onclick="closeForm()"></i>
+                </div>
+
+                <form action="" id="eform">
+                    <div class="inputGroup">
+                        <label for="amount">Amount</label>
+                        <input type="number" name="amount" id="expenseAmount" required>
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="">Category</label>
+                        <select name="category" id="expenseCategory" required>
+                            <option value="default">Select Category</option>
+                            <option value="food">Food</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="housing">Housing</option>
+                            <option value="transport">Transport</option>
+                        </select>
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="">Date</label>
+                        <input type="date" name="date" id="expenseDate" required>
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="">Description</label>
+                        <input type="text" name="description" id="expenseDescription">
+                    </div>
+
+                    <input type="button" value="Save" class="formBtn" onclick="getExpense()">
+                </form>
+            </div>
+        </section>
+
+         <section class="incomeForm" id="incomeForm">
+
+            <div class="formContainer">
+                <div class="formHeader">
+                    <p>Add Income</p>
+                    <i class="fas fa-x" id="addIncomeBtn" onclick="closeForm()"></i>
+                </div>
+
+                <form action="" id="iform">
+                    <div class="inputGroup">
+                        <label for="amount">Amount</label>
+                        <input type="number" name="amount" id="incomeAmount" required>
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="">Category</label>
+                        <select name="category" id="incomeCategory" required>
+                            <option value="default">Select Category</option>
+                            <option value="salary">Salary</option>
+                            <option value="investment">Investment</option>
+                            <option value="business">Business</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="">Date</label>
+                        <input type="date" name="date" id="incomeDate" required>
+                    </div>
+
+                    <div class="inputGroup">
+                        <label for="">Description</label>
+                        <input type="text" name="description" id="incomeDescription">
+                    </div>
+
+                    <input type="button" value="Save" class="formBtn" onclick="getIncome()">
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
