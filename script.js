@@ -85,6 +85,12 @@ function getExpense(){
 
    appendTransactionToTable();
 
+   function calculateExpensePercentage(monthlyExpense){
+    const initialMonthlyExpense = 1050;
+    let expensePercentage = eval(100*(monthlyExpense-initialMonthlyExpense)/initialMonthlyExpense);
+    document.getElementById('expensePercentage').textContent = parseInt(expensePercentage);
+}
+calculateExpensePercentage(monthlyExpense);
    closeForm();
 }
 
@@ -120,8 +126,15 @@ function getIncome(){
    transactions.unshift(newTransaction);
    appendTransactionToTable();
 
+   function calculateIncomePercentage(monthlyIncome){
+    const initialMonthlyIncome = 8050;
+    let incomePercentage = eval(100*(monthlyIncome-initialMonthlyIncome)/initialMonthlyIncome);
+    document.getElementById('incomePercentage').textContent = parseInt(incomePercentage);
+    }
+    calculateIncomePercentage(monthlyIncome);
    closeForm();
 }
+
 
 function appendTransactionToTable(){
     const tableBody = document.getElementById('transactionTableBody');
