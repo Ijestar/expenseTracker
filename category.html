@@ -30,73 +30,58 @@
         </nav>
     </aside>
     <main style="grid-area: main;">
-        <div class="cardContainer">
-            <div class="card balanceCard">
-                <p class="title">Monthly Balance</p>
-                <p class="amount" id="monthlyBalance">$7000</p>
-                <div class="stats"><span id="incomeStats">Monthly Income: $8050</span> <span id="expenseStats">Monthly Expenses: $1050</span></div>
+        <section class="categoryTables">
+
+            <div class="category">
+    
+                <table>
+                    <thead>
+                        <tr class="tableHead">
+                            <th>Income Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="alt">
+                            <td>Salary</td>
+                        </tr>
+                        <tr>
+                            <td>Investment</td>
+                        </tr>
+                        <tr class="alt">
+                            <td>Business</td>
+                        </tr>
+                        <tr>
+                            <td>Others</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="card expenseCard">
-                <p class="title">Monthly Expense</p>
-                <p class="amount" id="monthlyExpense">$1050</p>
-                <div class="stats"><i class="fas fa-arrow-up"></i><span id="expensePercentage">0%</span> increase this month</div>
+            
+            <div class="category">
+                <table>
+                    <thead>
+                        <tr class="tableHead">
+                            <th>Expense Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="alt">
+                            <td>Food</td>
+                        </tr>
+                        <tr>
+                            <td>Entertainment</td>
+                        </tr>
+                        <tr class="alt">
+                            <td>Housing</td>
+                        </tr>
+                        <tr>
+                            <td>Transport</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </table>
             </div>
-            <div class="card incomeCard">
-                <p class="title">Monthly Income</p>
-                <p class="amount" id="monthlyIncome">$8050</p>
-                <div class="stats"><i class="fas fa-arrow-up"></i><span id="incomePercentage">0%</span> increase this month</div>
-            </div>
-        </div>
-
-        <div class="recent">
-            <p class="tableTitle">Recent transactions</p>
-            <table>
-                <thead>
-                    <tr class="tableHead">
-                        <th>Date</td>
-                        <th>Category</td>
-                        <th>Description</td>
-                        <th>Amount</td>
-                        <th></td>
-                    </tr>
-                </thead>
-                <tbody id="transactionTableBody">
-                    <tr class="tableBody alt">
-                        <td>2026-03-04</td>
-                        <td>Food</td>
-                        <td>Dinner with friends</td>
-                        <td>$300</td>
-                        <td>...</td>
-                    </tr>
-
-                    <tr class="tableBody">
-                        <td>2026-03-03</td>
-                        <td>Transportation</td>
-                        <td>Transport</td>
-                        <td>$150</td>
-                        <td>...</td>
-                    </tr>
-
-                    <tr class="tableBody alt">
-                        <td>2026-03-02</td>
-                        <td>Entertainment</td>
-                        <td>Movie ticket</td>
-                        <td>$200</td>
-                        <td>...</td>
-                    </tr>
-
-                    <tr class="tableBody">
-                        <td>2026-03-01</td>
-                        <td>Housing</td>
-                        <td>Rent</td>
-                        <td>$400</td>
-                        <td>...</td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-
+        </section>
         <section class="expenseForm" id="expenseForm">
 
             <div class="formContainer">

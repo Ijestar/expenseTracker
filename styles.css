@@ -274,3 +274,25 @@ input, select{
     margin-top: 0.5rem;
     cursor: pointer;
 }
+
+.categoryTables{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 15%;
+}
+
+.category{
+    border-radius: 20px;
+    box-shadow: 1px 1px 7px rgba(144, 159, 187, 0.2);
+    width: 45%;
+    padding: 1.5rem 2rem;
+}
+
+.tableHead{
+    color: #0f2f69;
+}
+
+td{
+    color: #0f2f69;
+    cursor: pointer;
+}
