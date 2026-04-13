@@ -155,3 +155,35 @@ function appendTransactionToTable(){
         tableBody.appendChild(row);
     })
 }
+
+const body = document.getElementById('body');
+
+const themes = {
+    light: {
+        bg: "#f5f7fb",
+        text: "#0f2f69"
+    },
+    dark: {
+        bg: "#000000",
+        text: "#f5f7fb",
+    }
+};
+
+function applyTheme(mode) {
+    body.style.backgroundColor = themes[mode].bg;
+    document.getElementById('sTitle').style.color = themes[mode].text;
+    document.getElementById('sParagraph').style.color = themes[mode].text;
+    document.getElementById('greeting').style.color = themes[mode].text;
+
+    localStorage.setItem('theme', mode);
+}
+
+const savedMode = localStorage.getItem('theme') || 'light';
+applyTheme(savedMode);
+
+function onDarkMode() {
+    const currentMode = localStorage.getItem('theme') || 'light';
+    const nextMode = (currentMode === 'light') ? 'dark' : 'light';
+
+    applyTheme(nextMode);
+}

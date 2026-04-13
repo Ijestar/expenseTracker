@@ -84,7 +84,6 @@ header{
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #f5f7fb;
 }
 
 .greeting{
@@ -295,4 +294,24 @@ input, select{
 td{
     color: #0f2f69;
     cursor: pointer;
+}
+
+.sTitle{
+    font-size: 2rem;
+    color: #0f2f69;
+}
+
+.sParagraph{
+    color: #0f2f69;
+    margin-bottom: 1rem;
+}
+
+.sBtn{
+    color: #f5f7fb;
+    background-color: #0f2f69;
+    font-size: .7rem;
+}
+
+.sBtn:hover{
+    background-color: #1f5ccc;
 }
